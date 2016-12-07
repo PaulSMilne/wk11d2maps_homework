@@ -15,6 +15,15 @@ MapWrapper.prototype = {
           })
      },
 
+     addWindow: function(info){
+          var newWindow = new google.maps.InfoWindo({
+               content = info
+          });
+          newWindow.addListener('click', function({
+               newWindow.open(this.map, marker)
+          }))
+     },
+
      addClickEvent: function(){
 
           google.maps.event.addListener(this.googleMap, 'click', function(event){

@@ -1,11 +1,22 @@
+var pittenweem = {lat: 56.21, lng: -2.73}
+
 var init = function(){
      var container = document.getElementById('main-map');
-     var center = {lat: 55.99, lng: -2.52}
-     var mainMap = new MapWrapper(container, center, 10);
-     var newMarker = {lat:55.99, lng:-2.52};
-     mainMap.addMarker(center);
-     mainMap.addMarker(newMarker);
-     mainMap.addClickEvent();
+     var mainMap = new MapWrapper(container, pittenweem, 11);
+     // mainMap.addMarker(pittenweem);
+     // mainMap.addClickEvent();
 }
+
+var marker = new google.maps.Marker({
+     position: pittenweem,
+})
+
+var pittenweemInfo = "Pittenweem: a village in the East Neuk of Fife.";
+
+var pittenweemWindow = new google.maps.InfoWindow({
+     content: pittenweemInfo
+});
+
+
 
 window.onload = init;
